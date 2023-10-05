@@ -1,0 +1,122 @@
+* {
+    font-family: 'Mulish', sans-serif; /* Fuente secundaria */
+}
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0px;
+    display: flex;
+  }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    flex-direction: column; 
+    align-items: flex; 
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+body {
+    margin-top: 20px;
+    display: flex;
+}
+
+.searchForm {
+    margin: 20px;
+}
+
+.textCountry {
+    /* Pais al que pertenece cada imagen */
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #333333;
+    text-align: left;
+}
+
+.cardSites {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(
+            250px,
+            1fr
+        )
+    );
+    gap: 16px;
+}
+
+.listSites {
+    list-style-type: none;
+}
+
+.imageApartment {
+    /* Imagen formato */
+    border-radius: 24px;
+    width: 395px; 
+    height: 269px;
+}
+
+.textSuperHost {
+    /* SuperHost de cada imagen */
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #4F4F4F;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    vertical-align: middle;
+    border-radius: 20px;
+    border-color: #4F4F4F;
+    border-width: 1px;
+    margin-right: 10px;
+}
+
+.textType {
+    /* Tipo de cada imagen */
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    color: #828282;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    vertical-align: middle;
+}
+
+.logo {
+    height: 1em;
+    padding: 0px;
+    margin-right: 8px;
+  }
+
+.textRating {
+    /* Raiting de cada imagen */
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    color: #4F4F4F;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    vertical-align: middle;
+    position:relative;
+    left: 50px;
+}
+
+.textTitle {
+    /* Titulo de cada imagen */
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #333333;
+}

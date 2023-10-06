@@ -28,11 +28,16 @@ function App() {
      getData();
   }, []);
 
+const filterData = (text) => {
+  return data.filter((element) => 
+      element.city.toLowerCase().includes(text.toLowerCase())
+  );
+};
+
 const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const search = e.target[0].value.toLowerCase();
-    const filtrado = data.filter(obj => 
-        obj.city.toLowerCase().includes(search));
+    const filtrado = filterData(search);
     //console.log(filtrado);
     setFiltered(filtrado);
   }

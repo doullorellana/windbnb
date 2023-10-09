@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Countrytext from "./components/CountryText";
 import Card from "./components/Card";
+import Nav from "./components/Nav";
 import "./App.css";
 
 function App() {
@@ -27,11 +28,16 @@ function App() {
      getData();
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+const filterData = (text) => {
+  return data.filter((element) => 
+      element.city.toLowerCase().includes(text.toLowerCase())
+  );
+};
+
+const handleSubmit = (e) => {
+    e.preventDefault();
     const search = e.target[0].value.toLowerCase();
-    const filtrado = data.filter(obj => 
-        obj.city.toLowerCase().includes(search));
+    const filtrado = filterData(search);
     //console.log(filtrado);
     setFiltered(filtrado);
   }
@@ -42,26 +48,22 @@ function App() {
     <>
       <div className="container">
 
-        <form class="row g-3" className="searchForm" onSubmit={handleSubmit}>
-          <div class="col-auto">
-            <input type="text" className="inputSearch" class="form-control" name="" id="" placeholder="Search city"/>
-          </div>
-          <div class="col-auto">
-            <button type="submit" className="buttonSearch" class="btn btn-primary mb-3">Buscar</button>
-          </div>
-        </form>
+        <Nav fnHandleSubmit = {handleSubmit}/>
 
         <Countrytext title="Finlandia"/>
 
-        {/* Aquí te dejo un ejemplo de cómo podrías imprimir varios elementos a la vez. */}
-        {filtered === null 
-            ? "Es null"
-            : filtered.map((el, i) => {
-                return (
-                  <> 
-                    <Card elemento={el} item={i}/>
-                  </>
-                )})}
+        <div className="grid-container">
+
+          {/* Aquí te dejo un ejemplo de cómo podrías imprimir varios elementos a la vez. */}
+          {filtered === null 
+              ? "Es null"
+              : filtered.map((el, i) => {
+                  return (
+                    <> 
+                      <Card elemento={el} item={i}/>
+                    </>
+                  )})}
+        </div>
       </div>
     </>
   );
